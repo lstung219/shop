@@ -13,3 +13,39 @@ if(close){
   })
 }
 
+const search = () => {
+  const searchbox = document.getElementById("search-item").value.toUpperCase();
+  const storeitems = document.getElementById("pro_container");
+  const product = document.querySelectorAll(".pro");
+  const pname= storeitems.getElementsByTagName("h5");
+
+  for(var i=0; i < pname.length; i++){
+    let match = product[i].getElementsByTagName('h5')[0];
+
+    if(match){
+      let textvalue = match.innerHTML;
+
+      if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+        product[i].style.display = "";
+      }
+      else{
+        product[i].style.display = "none";
+      }
+    }
+  }
+}
+
+var MainImg= document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+        smallimg[0].onclick = function(){
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function(){
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function(){
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function(){
+            MainImg.src = smallimg[3].src;
+        }
